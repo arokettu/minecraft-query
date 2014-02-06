@@ -1,7 +1,7 @@
 Minecraft Server Query
 ======================
 
-A PHP library rewritten from python
+A PHP library for for checking the status of an enabled Minecraft server ported from python
 [https://github.com/Dinnerbone/mcstatus](https://github.com/Dinnerbone/mcstatus)
 
 Usage

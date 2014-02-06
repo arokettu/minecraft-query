@@ -2,7 +2,7 @@
 
 /**
  * The class for querying Minecraft server
- * Mostly a translation from python of https://github.com/Dinnerbone/mcstatus
+ * Mostly a port from python of https://github.com/Dinnerbone/mcstatus
  *
  * @author Anton Smirnov <sandfox@sandfox.im>
  * @license MIT
