@@ -40,6 +40,7 @@ class ServerQuery
 	private $challenge_packed;
 	private $retries;
 	private $max_retries;
+	private $ping;
 
 	private $socket;
 
@@ -86,6 +87,8 @@ class ServerQuery
 
 	private function handshake($bypass_retries = false)
 	{
+		$start = microtime(true);
+
 		$this->sendPacket(self::PACKET_TYPE_CHALLENGE);
 
 		try {
@@ -102,6 +105,8 @@ class ServerQuery
 				throw $e;
 			}
 		}
+
+		$this->ping = round((microtime(true)-$start)*1000);
 
 		$this->challenge = intval(substr($buff, 0, -1));
 		$this->challenge_packed = pack('N', $this->challenge);
@@ -141,6 +146,8 @@ class ServerQuery
 
 		$data['numplayers'] = intval($data['numplayers']);
 		$data['maxplayers'] = intval($data['maxplayers']);
+
+		$data['ping'] = $this->ping;
 
 		return $data;
 	}
@@ -205,6 +212,8 @@ class ServerQuery
 		$data['raw_plugins'] = $data['plugins'];
 
 		list($data['software'], $data['plugins']) = $this->parsePlugins($data['raw_plugins']);
+
+		$data['ping'] = $this->ping;
 
 		return $data;
 	}
