@@ -1,0 +1,20 @@
+{
+    "name": "sandfox-im/minecraft-query",
+    "description": "A PHP class for checking the status of an enabled Minecraft server",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Smirnov",
+            "email": "sandfox@sandfox.im"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SandFoxIM\\Minecraft\\": "classes/"
+        }
+    },
+    "require": {
+        "php": ">= 5.3",
+        "ext-sockets": "*"
+    }
+}
