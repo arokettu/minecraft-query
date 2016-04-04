@@ -1,6 +1,8 @@
 Minecraft Server Query
 ======================
 
+[![Code Climate](https://codeclimate.com/github/sandfoxme/minecraft-query/badges/gpa.svg)](https://codeclimate.com/github/sandfoxme/minecraft-query)
+
 A PHP library for checking the status of an enabled Minecraft server ported from python
 [https://github.com/Dinnerbone/mcstatus](https://github.com/Dinnerbone/mcstatus)
 
